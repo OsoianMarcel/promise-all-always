@@ -1,19 +1,35 @@
-class PromiseAllAlwaysModel {
-	constructor(res, err, isThen) {
-		this.then = res;
-		this.catch = err;
-		this.value = isThen ? res : err;
+/**
+ * Data model
+ *
+ * @param {*} value
+ * @param {Boolean} isThen
+ * @constructor
+ */
+const PromiseAlwaysModel = function(value, isThen) {
+	this.value = value;
+	this.isThen = isThen;
+};
 
-		this.isThen = isThen;
-		this.isCatch = !isThen;
-	}
-}
-
+/**
+ * Promise all always
+ *
+ * @param {Promise[]} promises Array of promises
+ * @return {Promise<any[]>} Array of promise results
+ */
 module.exports = promises => {
-	promises = promises.map(p => {
-		return p.then(v => new PromiseAllAlwaysModel(v, undefined, true))
-			.catch(err => new PromiseAllAlwaysModel(undefined, err, false));
-	});
+	if (!Array.isArray(promises)) {
+		return Promise.reject(new Error('The parameter should be an array of promises'));
+	}
+
+	for (let i = 0; i < promises.length; i++) {
+		if (typeof promises[i].then !== 'function') {
+			return Promise.reject(new Error('The parameter[' + i + '] should be a promise'));
+		}
+
+		promises[i] = promises[i]
+			.then(val => new PromiseAlwaysModel(val, true))
+			.catch(err => new PromiseAlwaysModel(err, false));
+	}
 
 	return Promise.all(promises);
 };
