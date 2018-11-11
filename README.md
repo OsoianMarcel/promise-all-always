@@ -6,20 +6,17 @@ Execute all the promises whether they resolve or reject
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/OsoianMarcel/promise-all-always/blob/master/LICENSE)
 
 ## Install
-
-### Yarn
 ```
+// Yarn
 yarn add promise-all-always
-```
-
-### NPM
-```
+// NPM
 npm install promise-all-always
 ```
 
 ## Example
 ```js
 const promiseAllAlways = require('promise-all-always');
+
 // Even if second promise is rejected, the execution will continue
 // Use "result" property to receive promise result
 // Use "isResolved" property to check if the promise is resolved or rejected
@@ -36,12 +33,10 @@ promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve('done')
 ```
 
 ## Testing
-
 ```bash
+// Yarn
 $ yarn test
-```
-
-```bash
+// NPM
 $ npm test
 ```
 
