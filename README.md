@@ -21,12 +21,16 @@ npm install promise-all-always
 ```js
 const promiseAllAlways = require('promise-all-always');
 // Even if second promise is rejected, the code will continue
-promiseAllAlways(Promise.resolve(1), Promise.reject(0), Promise.resolve('done'))
+promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve('done')])
 	.then(values => {
 		for (let value of values) {
 			console.log(value.value, value.isThen);
 		}
 	});
+
+// Return raw values (no object)
+promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve('done')], {rawResult: true})
+	.then(values => console.log(values));
 ```
 
 ## Testing

@@ -51,5 +51,29 @@ describe('All tests', function () {
 				.then(() => done('Should throw an error'))
 				.catch(() => done());
 		});
+
+		it('should return raw promise values (rawResult)', function (done) {
+			promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve(2)], {rawResult: true})
+				.then(res => {
+					if (res.length !== 3) {
+						return done('Length should be 3');
+					}
+
+					if (res[0] !== 1) {
+						return done('Promise[0] result should be 1');
+					}
+
+					if (res[1] !== 0) {
+						return done('Promise[1] result should be false');
+					}
+
+					if (res[2] !== 2) {
+						return done('Promise[1] result should be false');
+					}
+
+					done();
+				})
+				.catch(err => done(err));
+		});
 	});
 });
