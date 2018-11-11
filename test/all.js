@@ -19,20 +19,20 @@ describe('All tests', function () {
 						return done('Length should be 2');
 					}
 
-					if (res[0].value !== 1) {
-						return done('Promise[0] "value" result should be 1')
+					if (res[0].result !== 1) {
+						return done('Promise[0] "result" result should be 1')
 					}
 
-					if (!res[0].isThen) {
-						return done('Promise[0] "isThen" should be true')
+					if (!res[0].isResolved) {
+						return done('Promise[0] "isResolved" should be true')
 					}
 
-					if (res[1].value !== 0) {
-						return done('Promise[1] "value" result should be 0')
+					if (res[1].result !== 0) {
+						return done('Promise[1] "result" result should be 0')
 					}
 
-					if (res[1].isThen) {
-						return done('Promise[1] "isThen" should be false')
+					if (res[1].isResolved) {
+						return done('Promise[1] "isResolved" should be false')
 					}
 
 					done();
@@ -52,7 +52,7 @@ describe('All tests', function () {
 				.catch(() => done());
 		});
 
-		it('should return raw promise values (rawResult)', function (done) {
+		it('should return raw promise results (rawResult)', function (done) {
 			promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve(2)], {rawResult: true})
 				.then(res => {
 					if (res.length !== 3) {

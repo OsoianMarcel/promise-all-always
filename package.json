@@ -1,28 +1,28 @@
 {
- "name": "promise-all-always",
- "version": "1.0.2",
- "description": "Execute all the promises whether they resolve or reject",
- "keywords": [
-  "promise",
-  "all",
-  "always",
-  "reject",
-  "softfail"
- ],
- "main": "index.js",
- "repository": "https://github.com/OsoianMarcel/promise-all-always.git",
- "homepage": "https://github.com/OsoianMarcel/promise-all-always",
- "bugs": {
-  "url": "https://github.com/OsoianMarcel/promise-all-always/issues"
- },
- "author": "Osoian Marcel <osoian.marcel.d@gmail.com>",
- "license": "MIT",
- "devDependencies": {
-  "chai": "^4.2.0",
-  "chai-as-promised": "^7.1.1",
-  "mocha": "^5.2.0"
- },
- "scripts": {
-  "test": "mocha"
- }
+  "name": "promise-all-always",
+  "version": "1.0.3",
+  "description": "Execute all the promises whether they resolve or reject",
+  "keywords": [
+	"promise",
+	"all",
+	"always",
+	"reject",
+	"softfail"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/OsoianMarcel/promise-all-always.git",
+  "homepage": "https://github.com/OsoianMarcel/promise-all-always",
+  "bugs": {
+	"url": "https://github.com/OsoianMarcel/promise-all-always/issues"
+  },
+  "author": "Osoian Marcel <osoian.marcel.d@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+	"chai": "^4.2.0",
+	"chai-as-promised": "^7.1.1",
+	"mocha": "^5.2.0"
+  },
+  "scripts": {
+	"test": "mocha"
+  }
 }

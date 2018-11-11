@@ -20,11 +20,13 @@ npm install promise-all-always
 ## Example
 ```js
 const promiseAllAlways = require('promise-all-always');
-// Even if second promise is rejected, the code will continue
+// Even if second promise is rejected, the execution will continue
+// Use "result" property to receive promise result
+// Use "isResolved" property to check if the promise is resolved or rejected
 promiseAllAlways([Promise.resolve(1), Promise.reject(0), Promise.resolve('done')])
 	.then(values => {
 		for (let value of values) {
-			console.log(value.value, value.isThen);
+			console.log(`Result: ${value.result}`, '|', `Promise is ${value.isResolved ? 'resolved' : 'rejected'}`);
 		}
 	});
 
