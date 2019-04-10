@@ -64,11 +64,11 @@ describe('All tests', function () {
 					}
 
 					if (res[1] !== 0) {
-						return done('Promise[1] result should be false');
+						return done('Promise[1] result should be 0');
 					}
 
 					if (res[2] !== 2) {
-						return done('Promise[1] result should be false');
+						return done('Promise[2] result should be 2');
 					}
 
 					done();
