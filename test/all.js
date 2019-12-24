@@ -40,14 +40,44 @@ describe('All tests', function () {
 				.catch(err => done(err));
 		});
 
-		it('should throw an error when parameter is not an array', function (done) {
-			promiseAllAlways(1, 2)
-				.then(() => done('Should throw an error'))
-				.catch(() => done());
+		it('should non-promise results', function (done) {
+			promiseAllAlways([1, 'str', new Error('Test')])
+				.then(res => {
+					if (res.length !== 3) {
+						return done('Length should be 3');
+					}
+
+					if (res[0].result !== 1) {
+						return done('Promise[0] "result" result should be 1')
+					}
+
+					if (!res[0].isResolved) {
+						return done('Promise[0] "isResolved" should be true')
+					}
+
+					if (res[1].result !== 'str') {
+						return done('Promise[1] "result" result should be "str"')
+					}
+
+					if (!res[1].isResolved) {
+						return done('Promise[1] "isResolved" should be true')
+					}
+
+					if (!(res[2].result instanceof Error)) {
+						return done('Promise[2] "result" result should be instance of Error')
+					}
+
+					if (!res[2].isResolved) {
+						return done('Promise[2] "isResolved" should be true')
+					}
+
+					done();
+				})
+				.catch(err => done(err));
 		});
 
-		it('should throw an error when at least one item is not a promise', function (done) {
-			promiseAllAlways([Promise.resolve(1), '1', 1])
+		it('should throw an error when parameter is not an array', function (done) {
+			promiseAllAlways(1, 2)
 				.then(() => done('Should throw an error'))
 				.catch(() => done());
 		});

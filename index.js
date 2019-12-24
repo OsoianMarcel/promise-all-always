@@ -41,7 +41,7 @@
 
 		for (let i = 0; i < promises.length; i++) {
 			if (typeof promises[i].then !== 'function') {
-				return Promise.reject(new Error('The parameter[' + i + '] should be a promise'));
+				promises[i] = Promise.resolve(promises[i]);
 			}
 
 			promises[i] = promises[i]
