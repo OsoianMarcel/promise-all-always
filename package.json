@@ -1,6 +1,6 @@
 {
   "name": "promise-all-always",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Execute all the promises whether they resolve or reject",
   "keywords": [
 	"promise",
@@ -10,6 +10,9 @@
 	"softfail"
   ],
   "main": "index.js",
+  "files": [
+	"index.js"
+  ],
   "repository": "https://github.com/OsoianMarcel/promise-all-always.git",
   "homepage": "https://github.com/OsoianMarcel/promise-all-always",
   "bugs": {
