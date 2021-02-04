@@ -5,6 +5,9 @@ Execute all the promises whether they resolve or reject
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/promise-all-always)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/OsoianMarcel/promise-all-always/blob/master/LICENSE)
 
+# Notice
+An alternative solution for this library is [Promise.allSettled]. If your environment supports it, I recommend it instead.
+
 ## Install
 ```
 // Yarn
@@ -65,3 +68,4 @@ All contents of this package are licensed under the [MIT license].
 [Git repository]: https://github.com/OsoianMarcel/promise-all-always
 [examples]: https://github.com/OsoianMarcel/promise-all-always/tree/master/examples
 [MIT license]: LICENSE
+[Promise.allSettled]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
