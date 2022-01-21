@@ -27,6 +27,8 @@
 	/**
 	 * Promise all always
 	 *
+	 * @deprecated An alternative native solution for this library is Promise.allSettled
+	 *
 	 * @param {Promise[]} promises Array of promises
 	 * @param {Object} [opts={}] Options
 	 * @param {Boolean} [opts.rawResult=false] Set true to return raw promise results

@@ -5,8 +5,8 @@ Execute all the promises whether they resolve or reject
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/promise-all-always)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/OsoianMarcel/promise-all-always/blob/master/LICENSE)
 
-# Notice
-An alternative solution for this library is [Promise.allSettled]. If your environment supports it, I recommend it instead.
+# Deprecated library
+An alternative native solution for this library is [Promise.allSettled].
 
 ## Install
 ```
